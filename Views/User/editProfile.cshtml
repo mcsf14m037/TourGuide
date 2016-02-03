@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "editProfile";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+@using MvcApplication1.Models;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #update {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/Vintage-Tra2334vel.jpg);
+            width: 250px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="update" class="container">
+            @foreach(User u in ViewBag.user)
+            { 
+            <center>
+                <h1>Update Profile</h1>
+                <form method="post" action="UpdateRecord" enctype="multipart/form-data">
+                    <input type="hidden" id="id" name="Id" value="@u.Id">
+                    <input type="hidden" id="Gender" name="Gender" value="@u.Gender">
+                    <label>Name</label><input type="text" class="register-input" id="name" name="name" value="@u.name"><br><br>
+                    <input type="hidden" class="register-input" id="DOB" name="DOB" value="@u.DOB"><br><br>
+                    <input type="hidden" id="Role" name="Role" value="User">
+                    <label>City</label><input type="text" id="City" name="City" value="@u.City"><br><br>
+                    <label>Email</label><input type="text" id="Email" name="Email" value="@u.Email"><br><br>
+                    <label>Password</label><input type="password" id="Password" name="Password" value="@u.Password"><br><br>
+                    <label>Image</label><input type="file" id="image" name="image"><br><br>
+                    <input class="btn-primary btn-lg" type="submit" value="Update">
+                </form>
+            </center>
+            }
+        </div>
+    </center>
+</body>
+</html>

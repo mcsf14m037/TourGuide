@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "login";
+}
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    <style>
+        body {
+            background-color: #FFCC66;
+        }
+
+        .navbar-custom {
+            background-color: #FF6633;
+            color: #ffffff;
+            border-radius: 0;
+        }
+
+            .navbar-custom .navbar-nav > li > a {
+                color: #fff;
+            }
+
+            .navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+                color: #ffffff;
+                background-color: transparent;
+            }
+
+            .navbar-custom .navbar-brand {
+                color: #eeeeee;
+            }
+        #img1 {
+            max-height: 170%;
+            max-width: 170%;
+        }
+        #name {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        #password {
+            background-color: rgba(0, 0, 0, 0);
+        }
+        #login {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/depositphotos_20717265-Vintage-Travel.jpg);
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body >
+    <center>
+    <div id="login">
+        <center>
+            <form method="post" action="Verify">
+                <br><br><br><br>
+                <h2>Login</h2>
+                <h5>Username</h5> <input type="text" id="name" name="name"><br><br>
+                <h5>Password</h5><input type="password" name="Password" id="Password"><br><br>
+                <input class="btn-primary btn-lg" type="Submit" value="Login">
+
+            </form>
+        </center> 
+    </div>
+        </center>
+</body>
+</html>

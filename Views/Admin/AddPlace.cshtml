@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "AddPlace";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model MvcApplication1.Models.Place
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #signUp {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/Vintage-Tra2334vel.jpg);
+            width: 250px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="signUp" class="container">
+            <center>
+                <h1>Add Place</h1>
+                @using (Html.BeginForm("AddNewPlace", "Admin", FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        @Html.LabelFor(p => p.Name) @Html.TextBoxFor(p => p.Name)<br><br>
+                        @Html.LabelFor(p => p.City) @Html.TextBoxFor(p => p.City)<br><br>
+                        @Html.LabelFor(p => p.Province)@Html.TextBoxFor(p => p.Province)<br><br>
+                        @Html.LabelFor(p => p.Genre) @Html.TextBoxFor(p => p.Genre)<br><br>
+                        @Html.LabelFor(p => p.History)<textarea id="History" name="History"></textarea><br><br>
+                        <label>Image</label><input type="file" id="Image" name="Image"><br><br>
+                        <input class="btn-primary btn-lg" type="submit" value="Add Place">
+                    </fieldset>
+                }
+            </center>
+        </div>
+    </center>
+</body>
+</html>

@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "AddTour";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model MvcApplication1.Models.Tour
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #signUp {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/Vintage-Tra2334vel.jpg);
+            width: 250px;
+            height: 470px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="signUp" class="container">
+            <center>
+                <h1>Add Tour</h1>
+                @using (Html.BeginForm("AddNewTour", "Admin", FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <fieldset>
+                        @Html.LabelFor(p => p.Name) @Html.TextBoxFor(p => p.Name)<br><br>
+                        @Html.LabelFor(p => p.Duration) @Html.TextBoxFor(p => p.Duration)<br><br>
+                        @Html.LabelFor(p => p.Price)@Html.TextBoxFor(p => p.Price)<br><br>
+                        @Html.LabelFor(p => p.Facility_No_1) @Html.TextBoxFor(p => p.Facility_No_1)<br><br>
+                        @Html.LabelFor(p => p.Facility_No_2)@Html.TextBoxFor(p => p.Facility_No_2)<br><br>
+                        @Html.LabelFor(p => p.Facilty_No_3)@Html.TextBoxFor(p => p.Facilty_No_3)<br><br>
+                        @Html.LabelFor(p => p.Person)<input type="number" id="Person" name="Person"><br><br>
+                        @Html.LabelFor(p => p.Destination)@Html.TextBoxFor(p => p.Destination)<br><br>
+                        <label>Date and Time </label><input type="datetime" id="Date_and_Time" name="Date_and_Time"><br><br>
+                            <input class="btn-primary btn-lg" type="submit" value="Add Tour">
+                    </fieldset>
+                }
+            </center>
+        </div>
+    </center>
+</body>
+</html>

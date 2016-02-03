@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "AllQueries";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using MvcApplication1.Models;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #query {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background-color: #FFCC66;
+            width: 1050px;
+            height: 120px;
+        }
+
+        #para {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        
+
+            @foreach (Query q in Model)
+{
+    <div id="query" class="container">
+        <h4>From @q.User_Name ,</h4>
+        <p id="para">@q.Question</p>
+        <form method="post" action="Reply?id=@q.Id">
+        <input class="btn-info btn-sm" type="button" value="Reply" id="answer" >
+            </form>
+    </div>
+}
+
+       
+    </center>
+</body>
+</html>
+

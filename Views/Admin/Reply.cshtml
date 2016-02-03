@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Reply";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@model MvcApplication1.Models.Query
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Feedback</title>
+
+    <!--link rel="stylesheet" type="text/css" href="/Content/style2.css" /-->
+
+    <style>
+        #wrap {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/depositphotos_20717265-Vintage-Travel.jpg);
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div id="wrap">
+            <h2>Send Message to Users!</h2>
+            <center>
+                <form id="contact-form" action="ReplytoUser">
+
+                    <p id="formstatus"></p>
+                    <label for="msg">Your Message : </label>
+                    <input type="hidden" name="Id" value="@ViewBag.id" id="Id" />
+                    <textarea name="Message1" id="reply"></textarea><br><br>
+                    <input class="btn-primary btn-lg" type="submit" name="submit" value="Send Message" />
+                </form>
+            </center>
+        </div>
+    </center>
+</body>
+</html>

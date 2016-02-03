@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "userProfile";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+@*@model MvcApplication1.Models.User*@
+@using MvcApplication1.Models;
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>User Profile</title>
+    <style>
+        #userDiv {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/Vintage-Tra2334vel.jpg);
+            width: 250px;
+            height: 450px;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container" id="userDiv">
+        @foreach(User u in ViewBag.user)
+        {
+            <h3>Hi @u.name ,</h3>
+              
+                var imagePath= "";
+
+                    imagePath = "profile_" +Session["userId"]+".jpg";
+              
+            <img src="~/Content/@imagePath" height="100" width="70"><br><br>
+            <h4>Gender:</h4><h5>@u.Gender</h5><br><br>
+            <h4>Date of Birth:</h4><h5>@u.DOB</h5><br><br>
+            <h4>Email:</h4><h5>@u.Email</h5>
+        }    
+    
+    </div>
+</body>
+
+</html>
+
+
+

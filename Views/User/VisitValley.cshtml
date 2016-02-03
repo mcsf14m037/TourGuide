@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "VisitValley";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+@using MvcApplication1.Models;
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        #place {
+            background-color: #FFCC66;
+        }
+
+        #para {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 12px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" id="place">
+
+
+        @foreach (Place p in Model)
+        {
+            <h3>@p.Name</h3>
+            var imagePath = "";
+
+            imagePath = "place_" + p.Id + ".jpg";
+            <img src='~/Content/@imagePath' style='float: left; height:200px; width:250px; ' />
+            <p id="para">@p.History</p>
+        }
+    </div>
+</body>
+</html>
+

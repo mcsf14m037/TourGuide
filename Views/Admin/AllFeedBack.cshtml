@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "AllFeedBack";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using MvcApplication1.Models;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #feedBack {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background-color: #FFCC66;
+            width: 1050px;
+            height: 100px;
+        }
+        #para {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        
+            
+                @foreach (FeedBack f in Model)
+{
+    <div id="feedBack" class="container">
+        <h4>From @f.User_Name ,</h4>
+        <p id="para">@f.FeedBack1</p>
+    </div>
+}
+           
+      
+    </center>
+</body>
+</html>

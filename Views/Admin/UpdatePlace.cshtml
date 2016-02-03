@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "UpdatePlace";
+    Layout = "~/Views/Shared/AdminLayout.cshtml";
+}
+
+@using MvcApplication1.Models;
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <style>
+    </style>
+    <title>Sign_Up</title>
+    <style>
+        #signUp {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background: url(/Content/Vintage-Tra2334vel.jpg);
+            width: 250px;
+            height: 450px;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <div id="signUp" class="container">
+            <center>
+                @foreach(Place p in Model)
+                { 
+                <h1>Update Place</h1>
+                <form method="post" action="SavePlace" enctype="multipart/form-data">
+                    <label>Name</label><input type="text" class="register-input" id="Name" name="Name" value="@p.Name"><br><br>
+                    <label>City</label><input type="text" class="register-input" id="City" name="City" value="@p.City"><br><br>
+                    <input type="hidden" id="id" name="id" value="@p.Id"><br><br>
+                    <label>Province</label><input type="text" id="Province" name="Province" value="@p.Province"><br><br>
+                    <label>Genre</label><input type="text" id="Genre" name="Genre" value="@p.Genre"> <br><br>
+                    <label>History</label><textarea id="History" name="History" @p.History></textarea><br><br>
+                    <label>Image</label><input type="file" id="Image" name="Image"><br><br>
+                    <input class="btn-primary btn-lg" type="submit" value="Update">
+                </form>
+                }
+            </center>
+        </div>
+    </center>
+</body>
+</html>

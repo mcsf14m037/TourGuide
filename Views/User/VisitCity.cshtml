@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "VisitCity";
+    Layout = "~/Views/Shared/UserLayout.cshtml";
+}
+
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <title></title>
+    <style>
+        #myDiv {
+            border-radius: 15px 50px;
+            border: 2px solid #FF3300;
+            background-color: #FFCC66;
+            width: 1050px;
+            height: 150px;
+        }
+    </style>
+    <script>
+        $(document).ready(function () {
+            ("button").click(function () {
+                var c=("#city").val();
+                $("#myDiv").load("Home/SearchCity?city="+c)
+            })
+        });
+        </script>
+    </head>
+<body>
+    <div class="container" id="myDiv">
+        <center>
+           
+            <input type="text" name="city" >
+            <button type="submit" class="btn-sm btn-warning" value="Search" ></button>
+            
+            </center>
+        </div>
+  </body>
+</html>
